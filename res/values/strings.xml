@@ -3,5 +3,6 @@
 
     <string name="hello">Hello World, PricesActivity!</string>
     <string name="app_name">Prices</string>
+    <string name="empty">Нет доступных торговых точек</string>
 
 </resources>
