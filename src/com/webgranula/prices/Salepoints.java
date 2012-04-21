@@ -58,7 +58,7 @@ public class Salepoints extends ListActivity {
 		});
 	}
 	
-	private static String[] FROM = { _ID, TITLE, ADDRESS, };
+	private static String[] FROM = { TITLE, ADDRESS, _ID, };
 	private static String ORDER_BY = TITLE + " ASC";
 	private Cursor getSalepoints() {
 		SQLiteDatabase db = pricesData.getReadableDatabase();
@@ -67,7 +67,7 @@ public class Salepoints extends ListActivity {
 		return cursor;
 	}
 	
-	private static int[] TO = { R.id.rowid, R.id.title, R.id.address, };
+	private static int[] TO = { R.id.title, R.id.address, };
 	private void showSalepoints(Cursor cursor) {
 		SimpleCursorAdapter adapter = new SimpleCursorAdapter(this, R.layout.item,
 				cursor, FROM, TO);

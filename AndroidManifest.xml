@@ -23,6 +23,8 @@
             android:label="Точки продаж"></activity>
         <activity android:name=".SalepointDetails"
             android:label="Точка продаж"></activity>
+        <activity android:name=".WhiteBrand"
+            android:label="Точка продаж"></activity>
     </application>
 
 </manifest>

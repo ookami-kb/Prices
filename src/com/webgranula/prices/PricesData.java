@@ -11,7 +11,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class PricesData extends SQLiteOpenHelper {
 	private static final String DATABASE_NAME = "prices.db";
-	private static final int DATABASE_VERSION = 2;
+	private static final int DATABASE_VERSION = 3;
 	
 	public PricesData(Context ctx) {
 		super(ctx, DATABASE_NAME, null, DATABASE_VERSION);
@@ -23,11 +23,16 @@ public class PricesData extends SQLiteOpenHelper {
 				+ " INTEGER PRIMARY KEY AUTOINCREMENT, " + TITLE
 				+ " TEXT NOT NULL, " + ADDRESS + " TEXT, "
 				+ "STATUS TEXT);");
+		
+		// таблица белых брендов
+		db.execSQL("CREATE TABLE whitebrands (" + _ID
+				+ " INTEGER PRIMARY KEY, title TEXT NOT NULL);");
 	}
 	
 	@Override
 	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 		db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
+		db.execSQL("DROP TABLE IF EXISTS whitebrands");
 		onCreate(db);
 	}
 }
